@@ -206,7 +206,7 @@
       }
     },
     {
-      "type" : "plane-",
+      "type" : "plane",
       "position" : {
         "x" : 25,
         "y" : 5,
