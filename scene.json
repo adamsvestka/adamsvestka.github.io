@@ -1,4 +1,17 @@
 {
+  "camera" : {
+    "position" : {
+      "x" : 0,
+      "y" : 0,
+      "z" : 0
+    },
+    "rotation" : {
+      "x" : 0,
+      "y" : 0,
+      "z" : 0
+    },
+    "fov" : 120
+  },
   "shaders" : {
     "bricks" : {
       "type" : "mix",
@@ -260,6 +273,27 @@
         "x" : 45,
         "y" : 45,
         "z" : 270
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "color" : "blue"
+        }
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "alfa147.obj",
+      "position" : {
+        "x" : 10,
+        "y" : 2,
+        "z" : -3
+      },
+      "scale" : 0.02,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
       },
       "material" : {
         "shader" : {
