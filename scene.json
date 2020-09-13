@@ -39,7 +39,7 @@
     },
     "arnold" : {
       "type" : "image",
-      "name" : "arnold.jpg"
+      "value" : "arnold.jpg"
     }
   },
   "objects" : [
@@ -52,14 +52,14 @@
       },
       "size" : 3,
       "rotation" : {
-        "x" : 45,
+        "x" : 0,
         "y" : 0,
-        "z" : 0
+        "z" : 45
       },
       "material" : {
         "shader" : {
           "type" : "named",
-          "name" : "bricks"
+          "value" : "bricks"
         }
       }
     },
@@ -121,7 +121,7 @@
       "material" : {
         "shader" : {
           "type" : "named",
-          "name" : "bricks"
+          "value" : "bricks"
         },
         "n" : 250,
         "Ks" : 0.01
@@ -136,9 +136,9 @@
       },
       "diameter" : 5,
       "rotation" : {
-        "x" : 90,
+        "x" : 0,
         "y" : 0,
-        "z" : 0
+        "z" : 90
       },
       "material" : {
         "shader" : {
@@ -184,9 +184,9 @@
       },
       "diameter" : 4,
       "rotation" : {
-        "x" : 0,
+        "x" : 90,
         "y" : 0,
-        "z" : 90
+        "z" : 0
       },
       "material" : {
         "shader" : {
@@ -228,14 +228,14 @@
       "size_x" : 10,
       "size_y" : 10,
       "rotation" : {
-        "x" : 25,
+        "x" : 0,
         "y" : 25,
-        "z" : 0
+        "z" : 25
       },
       "material" : {
         "shader" : {
           "type" : "image",
-          "name" : "broccoli.jpg"
+          "value" : "broccoli.jpg"
         }
       }
     },
@@ -249,14 +249,14 @@
       },
       "scale" : 0.1,
       "rotation" : {
-        "x" : 0,
+        "x" : 270,
         "y" : 0,
-        "z" : 270
+        "z" : 0
       },
       "material" : {
         "shader" : {
           "type" : "color",
-          "color" : "blue"
+          "value" : "blue"
         }
       }
     },
@@ -270,19 +270,19 @@
       },
       "scale" : 0.05,
       "rotation" : {
-        "x" : 45,
+        "x" : 270,
         "y" : 45,
-        "z" : 270
+        "z" : 45
       },
       "material" : {
         "shader" : {
           "type" : "color",
-          "color" : "blue"
+          "value" : "blue"
         }
       }
     },
     {
-      "type" : "object",
+      "type" : "object-",
       "name" : "alfa147.obj",
       "position" : {
         "x" : 10,
@@ -298,7 +298,7 @@
       "material" : {
         "shader" : {
           "type" : "color",
-          "color" : "blue"
+          "value" : "blue"
         }
       }
     }
