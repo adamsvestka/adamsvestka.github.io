@@ -1,0 +1,564 @@
+{
+  "camera" : {
+    "position" : {
+      "x" : 0,
+      "y" : 2,
+      "z" : 6
+    },
+    "rotation" : {
+      "x" : 0,
+      "y" : -30,
+      "z" : 3
+    },
+    "fov" : 35
+  },
+  "shaders" : {
+    "bricks" : {
+      "type" : "mix",
+      "values" : [
+        {
+          "type" : "bricks",
+          "scale" : 8,
+          "ratio" : 2,
+          "mortar" : 0.1,
+          "primary" : "red",
+          "secondary" : "mocha",
+          "tertiary" : "white"
+        },
+        {
+          "type" : "noise",
+          "scale" : 8,
+          "seed" : 0,
+          "primary" : "white"
+        }
+      ],
+      "weights" : [
+        1,
+        -0.2
+      ]
+    },
+    "arnold" : {
+      "type" : "image",
+      "value" : "arnold.jpg"
+    }
+  },
+  "objects-" : [
+    {
+      "type" : "cube",
+      "position" : {
+        "x" : 18.5,
+        "y" : -6,
+        "z" : -2
+      },
+      "size" : 3,
+      "rotation" : {
+        "x" : 45,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "named",
+          "name" : "bricks"
+        }
+      }
+    },
+    {
+      "type" : "plane",
+      "position" : {
+        "x" : 50,
+        "y" : -4,
+        "z" : -4
+      },
+      "size_x" : 80,
+      "size_y" : 24,
+      "material" : {
+        "shader" : {
+          "type" : "mix",
+          "values" : [
+            {
+              "type" : "checkerboard",
+              "scale" : 32,
+              "primary" : "red",
+              "secondary" : "yellow"
+            },
+            {
+              "type" : "noise",
+              "scale" : 32,
+              "primary" : "white"
+            }
+          ],
+          "weights" : [
+            1,
+            -0.5
+          ]
+        }
+      }
+    },
+    {
+      "type" : "sphere",
+      "position" : {
+        "x" : 15,
+        "y" : 0,
+        "z" : 1
+      },
+      "diameter" : 6,
+      "material" : {
+        "n" : 0,
+        "Ks" : 0,
+        "ior" : 0.95,
+        "transparent" : true
+      }
+    },
+    {
+      "type" : "sphere",
+      "position" : {
+        "x" : 10,
+        "y" : -3.5,
+        "z" : 1
+      },
+      "diameter" : 2,
+      "material" : {
+        "shader" : {
+          "type" : "named",
+          "name" : "bricks"
+        },
+        "n" : 250,
+        "Ks" : 0.01
+      }
+    },
+    {
+      "type" : "sphere",
+      "position" : {
+        "x" : 20,
+        "y" : -5,
+        "z" : -0.5
+      },
+      "diameter" : 5,
+      "rotation" : {
+        "x" : 90,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "checkerboard",
+          "scale" : 32,
+          "primary" : "red",
+          "secondary" : "yellow"
+        },
+        "n" : 250,
+        "Ks" : 0.7
+      }
+    },
+    {
+      "type" : "sphere",
+      "position" : {
+        "x" : 30,
+        "y" : -7,
+        "z" : 5
+      },
+      "diameter" : 5,
+      "rotation" : {
+        "x" : 0,
+        "y" : 90,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "checkerboard",
+          "scale" : 32,
+          "primary" : "green",
+          "secondary" : "gray"
+        },
+        "n" : 250,
+        "Ks" : 0.7
+      }
+    },
+    {
+      "type" : "sphere",
+      "position" : {
+        "x" : 30,
+        "y" : 5,
+        "z" : 0
+      },
+      "diameter" : 4,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 90
+      },
+      "material" : {
+        "shader" : {
+          "type" : "checkerboard",
+          "scale" : 32,
+          "primary" : "white",
+          "secondary" : "green"
+        },
+        "n" : 250,
+        "Ks" : 0.7
+      }
+    },
+    {
+      "type" : "sphere",
+      "position" : {
+        "x" : 40,
+        "y" : 0,
+        "z" : 0.5
+      },
+      "diameter" : 6,
+      "material" : {
+        "shader" : {
+          "type" : "checkerboard",
+          "scale" : 32,
+          "primary" : "purple",
+          "secondary" : "magenta"
+        },
+        "n" : 250,
+        "Ks" : 0.7
+      }
+    },
+    {
+      "type" : "plane",
+      "position" : {
+        "x" : 25,
+        "y" : 5,
+        "z" : -3
+      },
+      "size_x" : 10,
+      "size_y" : 10,
+      "rotation" : {
+        "x" : 25,
+        "y" : 25,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "image",
+          "name" : "broccoli.jpg"
+        }
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "skyscraper.obj",
+      "position" : {
+        "x" : 10,
+        "y" : -2,
+        "z" : -2
+      },
+      "scale" : 0.1,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 270
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "color" : "blue"
+        }
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "cessna.obj",
+      "position" : {
+        "x" : 10,
+        "y" : 2,
+        "z" : 2
+      },
+      "scale" : 0.05,
+      "rotation" : {
+        "x" : 45,
+        "y" : 45,
+        "z" : 270
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "color" : "blue"
+        }
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "alfa147.obj",
+      "position" : {
+        "x" : 10,
+        "y" : 2,
+        "z" : -3
+      },
+      "scale" : 0.02,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "color" : "blue"
+        }
+      }
+    }
+  ],
+  "objects" : [
+    {
+      "type" : "plane",
+      "position" : {
+        "x" : 7,
+        "y" : 0,
+        "z" : -2
+      },
+      "size_x" : 30,
+      "size_y" : 30,
+      "material" : {
+        "shader" : {
+          "type" : "image",
+          "value" : "donut/marble.jpg"
+        }
+      }
+    },
+    {
+      "type" : "plane",
+      "position" : {
+        "x" : 24,
+        "y" : 0,
+        "z" : -2
+      },
+      "rotation" : {
+        "x" : 0,
+        "y" : 90,
+        "z" : 90
+      },
+      "size_x" : 30,
+      "size_y" : 30,
+      "material" : {
+        "shader" : {
+          "type" : "multiply",
+          "values" : [
+            {
+              "type" : "grayscale",
+              "value" : {
+                "type" : "image",
+                "value" : "donut/bricks.jpg"
+              }
+            },
+            {
+              "type" : "color",
+              "value" : "magenta"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "donut/dough.obj",
+      "position" : {
+        "x" : 10,
+        "y" : 0,
+        "z" : -2
+      },
+      "scale" : 30,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "add",
+          "values" : [
+            {
+              "type" : "image",
+              "value" : "donut/dough.png"
+            },
+            {
+              "type" : "noise",
+              "scale" : 20,
+              "primary" : "orange"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "donut/glazzing.obj",
+      "position" : {
+        "x" : 10,
+        "y" : 0,
+        "z" : -2
+      },
+      "scale" : 30,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "value" : "magenta"
+        },
+        "Ks" : 0.08,
+        "n" : 10
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "donut/topping.obj",
+      "position" : {
+        "x" : 10,
+        "y" : 0,
+        "z" : -2
+      },
+      "scale" : 30,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "value" : "blue"
+        }
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "donut/plate1.obj",
+      "position" : {
+        "x" : 10,
+        "y" : 0,
+        "z" : -2
+      },
+      "scale" : 30,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "value" : "white"
+        },
+        "Ks" : 0,
+        "n" : 3
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "donut/plate2.obj",
+      "position" : {
+        "x" : 12,
+        "y" : 6,
+        "z" : -2
+      },
+      "scale" : 30,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "value" : "white"
+        },
+        "transparent" : false
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "donut/cup.obj",
+      "position" : {
+        "x" : 12,
+        "y" : 6,
+        "z" : -2
+      },
+      "scale" : 30,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "value" : "white"
+        },
+        "transparent" : false
+      }
+    },
+    {
+      "type" : "object",
+      "name" : "donut/liquid.obj",
+      "position" : {
+        "x" : 12,
+        "y" : 6,
+        "z" : -2
+      },
+      "scale" : 30,
+      "rotation" : {
+        "x" : 0,
+        "y" : 0,
+        "z" : 0
+      },
+      "material" : {
+        "shader" : {
+          "type" : "color",
+          "value" : "mocha"
+        }
+      }
+    }
+  ],
+  "lights-" : [
+    {
+      "type" : "global",
+      "color" : "lime",
+      "intensity" : 0.05
+    },
+    {
+      "type" : "linear",
+      "position" : {
+        "x" : -10,
+        "y" : -10,
+        "z" : 5
+      },
+      "color" : "white",
+      "intensity" : 500
+    }
+  ],
+  "lights" : [
+    {
+      "type" : "global",
+      "color" : "orange",
+      "intensity" : 0.05
+    },
+    {
+      "type" : "linear",
+      "position" : {
+        "x" : -5,
+        "y" : -5,
+        "z" : 5
+      },
+      "color" : "white",
+      "intensity" : 220
+    },
+    {
+      "type" : "point",
+      "position" : {
+        "x" : 15,
+        "y" : 7,
+        "z" : 6
+      },
+      "color" : "yellow",
+      "intensity" : 200
+    }
+  ]
+}
