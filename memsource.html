@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <script>
+            window.onmessage = async event => {
+                console.log('hi', event.data.pluginMessage);
+                const response = await fetch(event.data.pluginMessage.url, event.data.pluginMessage.payload);
+                console.log('hi', response);
+                const json = await response.json();
+                window.parent.postMessage({ pluginMessage: json }, '*');
+            }
+        </script>
+    </body>
+</html>
