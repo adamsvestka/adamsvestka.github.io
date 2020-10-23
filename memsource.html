@@ -6,7 +6,7 @@
                 const response = await fetch(event.data.url, event.data.payload);
                 const cloned = {};
                 for (const key of Object.keys(Response.prototype)) cloned[key] = response[key];
-                console.log('fetch', cloned);
+                console.log('fetched', cloned);
                 window.parent.postMessage(cloned, '*');
             }
         </script>
