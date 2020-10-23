@@ -2,11 +2,10 @@
     <body>
         <script>
             window.onmessage = async event => {
-                console.log('hi', event.data.pluginMessage);
-                const response = await fetch(event.data.pluginMessage.url, event.data.pluginMessage.payload);
-                console.log('hi', response);
-                const json = await response.json();
-                window.parent.postMessage({ pluginMessage: json }, '*');
+                console.log('message', event.data);
+                const response = await fetch(event.data.url, event.data.payload);
+                console.log('fetch', response);
+                window.parent.postMessage(response, '*');
             }
         </script>
     </body>
