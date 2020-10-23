@@ -4,8 +4,9 @@
             window.onmessage = async event => {
                 console.log('message', event.data);
                 const response = await fetch(event.data.url, event.data.payload);
-                console.log('fetch', response);
-                window.parent.postMessage(response, '*');
+                const stripped = JSON.parse(JSON.stringify(response));
+                console.log('fetch', stripped);
+                window.parent.postMessage(stripped, '*');
             }
         </script>
     </body>
