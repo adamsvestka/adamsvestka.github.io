@@ -12,7 +12,7 @@
                     result.ok = false;
                     result.error = error.message;
                 }
-                console.log('fetch', result);
+                console.log('fetched', result);
                 window.parent.postMessage(result, '*');
             }
         </script>
