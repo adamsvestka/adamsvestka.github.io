@@ -5,7 +5,7 @@
                 console.log('message', event.data);
                 const response = await fetch(event.data.url, event.data.payload);
                 const stripped = JSON.parse(JSON.stringify(response));
-                console.log('fetch', stripped);
+                console.log('fetched', stripped);
                 window.parent.postMessage(stripped, '*');
             }
         </script>
