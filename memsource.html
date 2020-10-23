@@ -4,9 +4,10 @@
             window.onmessage = async event => {
                 console.log('message', event.data);
                 const response = await fetch(event.data.url, event.data.payload);
-                const stripped = JSON.parse(JSON.stringify(response));
-                console.log('fetched', stripped);
-                window.parent.postMessage(stripped, '*');
+                const cloned = {};
+                for (const key of Object.keys(Response.prototype)) cloned[key] = response[key];
+                console.log('fetch', cloned);
+                window.parent.postMessage(cloned, '*');
             }
         </script>
     </body>
