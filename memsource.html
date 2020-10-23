@@ -3,11 +3,17 @@
         <script>
             window.onmessage = async event => {
                 console.log('message', event.data);
-                const response = await fetch(event.data.url, event.data.payload);
-                const cloned = {};
-                for (const key of Object.keys(Response.prototype)) cloned[key] = response[key];
-                console.log('fetched', cloned);
-                window.parent.postMessage(cloned, '*');
+                const result = {};
+                try {
+                    const response = await fetch(event.data.url, event.data.payload);
+                    for (const key of ['ok', 'status', 'statusText']) result[key] = response[key];
+                    result.text = response.status != 204 ? await response.text() : null;
+                catch (error) {
+                    result.ok = false;
+                    result.error = error.message;
+                }
+                console.log('fetch', result);
+                window.parent.postMessage(result, '*');
             }
         </script>
     </body>
