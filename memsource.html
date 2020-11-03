@@ -1,10 +1,11 @@
 <html>
     <body>
         <script>
-            window.onmessage = async ({ data: { pluginMessage: { url, payload } } }) => {
+            window.onmessage = async event => {
+                console.log(event);
                 const result = {};
                 try {
-                    const response = await fetch(url, payload);
+                    const response = await fetch(event.data.pluginMessage.url, event.data.pluginMessage.payload);
                     for (const key of ['ok', 'status', 'statusText']) result[key] = response[key];
                     result.text = response.status != 204 ? await response.text() : null;
                 } catch (error) {
