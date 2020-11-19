@@ -5,7 +5,7 @@
                 const result = {};
                 try {
                     const { method, headers, body } = event.data.payload || {};
-                    const response = await fetch(event.data.url, { method, headers, body, credentials: 'omit' });
+                    const response = await fetch(event.data.url, { method, headers, body, mode: 'cors', credentials: 'omit' });
                     for (const key of ['ok', 'status', 'statusText']) result[key] = response[key];
                     result.headers = Object.fromEntries(response.headers);
                     result.text = response.status != 204 ? await response.text() : null;
