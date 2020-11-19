@@ -6,6 +6,7 @@
                 try {
                     const { method, headers, body } = event.data.payload || {};
                     const response = await fetch(event.data.url, { method, headers, body, credentials: 'omit' });
+                    console.info(response);
                     for (const key of ['ok', 'status', 'statusText']) result[key] = response[key];
                     result.headers = Object.fromEntries(response.headers);
                     result.text = response.status != 204 ? await response.text() : null;
