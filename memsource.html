@@ -4,7 +4,8 @@
             window.onmessage = async event => {
                 const result = {};
                 try {
-                    const response = await fetch(event.data.url, event.data.payload);
+                    const { method, headers, body } = event.data.payload || {};
+                    const response = await fetch(event.data.url, { method, headers, body, credentials: 'omit' });
                     for (const key of ['ok', 'status', 'statusText']) result[key] = response[key];
                     result.text = response.status != 204 ? await response.text() : null;
                 } catch (error) {
