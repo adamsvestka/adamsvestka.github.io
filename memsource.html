@@ -4,7 +4,7 @@
             window.onmessage = async event => {
                 if (!event.data.memsource) return;
                 const results = await Promise.all(event.data.requests.map(async request => {
-                    const result = {};
+                    let result = {};
                     try {
                         const { method, headers, body } = request.payload || {};
                         const response = await fetch(request.url, { method, headers, body, mode: 'cors', credentials: 'omit' });
