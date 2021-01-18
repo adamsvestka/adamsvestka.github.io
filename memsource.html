@@ -24,7 +24,7 @@
                     }
                     return result;
                 }));
-                window.parent.postMessage(results, '*');
+                window.parent.postMessage({ results, memsource: true }, '*');
             }
         </script>
     </body>
