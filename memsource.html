@@ -19,10 +19,10 @@
                 };
                 const results = await Promise.all(event.data.requests.map(async request => {
                     if (request.payload.collect) {
-                        let page = 0;
                         const data = [];
-                        while (true) {
+                        for (let page = 0;; page++) {
                             const response = await _fetch(request.url + '&pageNumber=' + page++, request.payload);
+                            console.log(response);
                             if (!response.ok || !response.content) return response;
                             if (response.numberOfElements == 0) break;
                             data.push(...response.content);
