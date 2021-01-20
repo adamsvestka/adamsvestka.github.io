@@ -22,8 +22,10 @@
                         const data = [];
                         for (let page = 0;; page++) {
                             const response = await _fetch(request.url + (request.url.includes('?') ? '&' : '?') + 'pageNumber=' + page++, request.payload);
-                            if (!response.ok || !response.content) return response;
-                            if (response.numberOfElements == 0) break;
+                            if (!response.ok) return response;
+                            const json = JSON.parse(response.text);
+                            if (!json.content) return { ...response, ok: false, error: 'Not a collectable response' };
+                            if (json.numberOfElements == 0) break;
                             data.push(...response.content);
                         }
                         return data;
