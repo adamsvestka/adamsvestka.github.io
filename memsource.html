@@ -10,7 +10,7 @@
                         const response = await fetch(url, { method, headers, body, mode: 'cors', credentials: 'omit' });
                         for (const key of ['ok', 'status', 'statusText']) result[key] = response[key];
                         result.headers = Object.fromEntries(response.headers);
-                        result.text = response.status != 204 ? await response.text() : null;
+                        result.json = response.status != 204 ? await response.json() : null;
                     } catch (error) {
                         result.ok = false;
                         result.error = error.message;
@@ -23,10 +23,9 @@
                         for (let page = 0;; page++) {
                             const response = await _fetch(request.url + (request.url.includes('?') ? '&' : '?') + 'pageNumber=' + page++, request.payload);
                             if (!response.ok) return response;
-                            const json = JSON.parse(response.text);
-                            if (!json.content) return { ...response, ok: false, error: 'Not a collectable response' };
-                            if (json.numberOfElements == 0) break;
-                            data.push(...json.content);
+                            if (!response.json.content) return { ...response, ok: false, error: 'Not a collectable endpoint' };
+                            if (response.json.numberOfElements == 0) break;
+                            data.push(...response.json.content);
                         }
                         return data;
                     }
