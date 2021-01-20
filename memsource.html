@@ -26,7 +26,7 @@
                             const json = JSON.parse(response.text);
                             if (!json.content) return { ...response, ok: false, error: 'Not a collectable response' };
                             if (json.numberOfElements == 0) break;
-                            data.push(...response.content);
+                            data.push(...json.content);
                         }
                         return data;
                     }
