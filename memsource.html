@@ -30,7 +30,7 @@
                             }));
                             const error = responses.find(e => !e.ok);
                             if (error) result = error;
-                            else result = { ...initial, json: [...initial.json.content, ...data.flatMap(e => e.json.content)] };
+                            else result = { ...initial, json: [...initial.json.content, ...responses.flatMap(e => e.json.content)] };
                         } catch (error) {
                             result.ok = false;
                             result.error = error.message;
