@@ -3,26 +3,33 @@
         <script>
             window.onmessage = async event => {
                 if (!event.data.memsource) return;
-                const results = await Promise.all(event.data.requests.map(async request => {
-                    let result = {};
+                const _fetch = (url, payload) => {
+                    const result = {};
                     try {
-                        const { method, headers, body } = request.payload || {};
-                        const response = await fetch(request.url, { method, headers, body, mode: 'cors', credentials: 'omit' });
-                        const temp = {};
-                        for (const key of ['ok', 'status', 'statusText']) temp[key] = response[key];
-                        result = {
-                            ...temp,
-                            headers: Object.fromEntries(response.headers),
-                            text: response.status != 204 ? await response.text() : null
-                        };
+                        const { method, headers, body } = payload || {};
+                        const response = await fetch(url, { method, headers, body, mode: 'cors', credentials: 'omit' });
+                        for (const key of ['ok', 'status', 'statusText']) result[key] = response[key];
+                        result.headers = Object.fromEntries(response.headers);
+                        result.text = response.status != 204 ? await response.text() : null;
                     } catch (error) {
-                        result = {
-                            ...result,
-                            ok: false,
-                            error: error.message
-                        };
+                        result.ok = false;
+                        result.error = error.message;
                     }
                     return result;
+                };
+                const results = await Promise.all(event.data.requests.map(async request => {
+                    if (request.payload.collect) {
+                        let page = 0;
+                        const data = [];
+                        while (true) {
+                            const response = await _fetch(request.url + '&pageNumber=' + page++, request.payload);
+                            if (!response.ok || !response.content) return response;
+                            if (response.numberOfElements == 0) break;
+                            data.push(...response.content);
+                        }
+                        return data;
+                    }
+                    return _fetch(request.url, request.payload);
                 }));
                 window.parent.postMessage({ results, memsource: true }, '*');
             }
