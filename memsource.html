@@ -3,7 +3,7 @@
         <script>
             window.onmessage = async event => {
                 if (!event.data.memsource) return;
-                const _fetch = (url, payload) => {
+                const _fetch = async (url, payload) => {
                     const result = {};
                     try {
                         const { method, headers, body } = payload || {};
@@ -29,7 +29,7 @@
                         }
                         return data;
                     }
-                    return _fetch(request.url, request.payload);
+                    return await _fetch(request.url, request.payload);
                 }));
                 window.parent.postMessage({ results, memsource: true }, '*');
             }
