@@ -19,15 +19,23 @@
                 };
                 const results = await Promise.all(event.data.requests.map(async request => {
                     if (request.payload.collect) {
-                        const data = [];
-                        for (let page = 0;; page++) {
-                            const response = await _fetch(request.url + (request.url.includes('?') ? '&' : '?') + 'pageNumber=' + page++, request.payload);
-                            if (!response.ok) return response;
-                            if (!response.json.content) return { ...response, ok: false, error: 'Not a collectable endpoint' };
-                            if (response.json.numberOfElements == 0) break;
-                            data.push(...response.json.content);
+                        let result = {};
+                        try {
+                            const baseURL = request.url + (request.url.includes('?') ? '&' : '?') + 'pageNumber=';
+                            const initial = await _fetch(baseURL + 0, request.payload);
+                            const totalPages = initial.json.totalPages;
+                            if (totalPages == undefined || !initial.json.content) return { ...initial, ok: false, error: 'Not a collectable endpoint' };
+                            const responses = await Promise.all(Array.from(Array(totalPages - 1)).map(async (_, i) => {
+                                return await _fetch(baseURL + (i + 1), request.payload);
+                            }));
+                            const error = responses.find(e => !e.ok);
+                            if (error) result = error;
+                            else result = { ...initial, json: [...initial.json.content, ...data.flatMap(e => e.json.content)] };
+                        } catch (error) {
+                            result.ok = false;
+                            result.error = error.message;
                         }
-                        return data;
+                        return result;
                     }
                     return await _fetch(request.url, request.payload);
                 }));
