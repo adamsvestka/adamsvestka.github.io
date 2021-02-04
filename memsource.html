@@ -25,7 +25,7 @@
                             if (!initial.ok) return initial;
                             const totalPages = initial.json.totalPages;
                             if (totalPages == undefined || !initial.json.content) return { ...initial, ok: false, error: 'Not a collectable endpoint' };
-                            if (totalPages < 2) return initial.json.content;
+                            if (totalPages < 2) return { ...initial, json: initial.json.content };
                             const responses = await Promise.all(Array(totalPages - 1).fill().map(async (_, i) => {
                                 return await _fetch(baseURL + (i + 1), request.payload);
                             }));
