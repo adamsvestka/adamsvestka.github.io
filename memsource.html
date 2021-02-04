@@ -19,21 +19,21 @@
                 };
                 const results = await Promise.all(event.data.requests.map(async request => {
                     if (request.payload.collect) {
-                        let result = {};
                         try {
                             const baseURL = request.url + (request.url.includes('?') ? '&' : '?') + 'pageNumber=';
                             const initial = await _fetch(baseURL + 0, request.payload);
+                            if (!initial.ok) return initial;
                             const totalPages = initial.json.totalPages;
                             if (totalPages == undefined || !initial.json.content) return { ...initial, ok: false, error: 'Not a collectable endpoint' };
-                            const responses = await Promise.all(Array.from(Array(totalPages - 1)).map(async (_, i) => {
+                            if (totalPages < 2) return initial.json.content;
+                            const responses = await Promise.all(Array(totalPages - 1).fill().map(async (_, i) => {
                                 return await _fetch(baseURL + (i + 1), request.payload);
                             }));
                             const error = responses.find(e => !e.ok);
-                            if (error) result = error;
-                            else result = { ...initial, json: [...initial.json.content, ...responses.flatMap(e => e.json.content)] };
+                            if (error) return error;
+                            else return { ...initial, json: [...initial.json.content, ...responses.flatMap(e => e.json.content)] };
                         } catch (error) {
-                            result.ok = false;
-                            result.error = error.message;
+                            return { ok: false, error: error.message };
                         }
                         return result;
                     }
