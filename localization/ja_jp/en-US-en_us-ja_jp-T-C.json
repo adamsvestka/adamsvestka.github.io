@@ -1,0 +1,31 @@
+{
+    "page1": "ページ1",
+    
+    "page2": "2ページ",
+
+    "sidebar_default": "項目",
+    "sidebar_chat": "チャット",
+
+    "menubar_accessibility_theme": "ダークモード",
+    "menubar_accessibility_motion": "動きの減少",
+    "menubar_accessibility_language": "言語",
+    "menubar_accessibility_back": "バック",
+
+    "menubar_status_banned": "あなたは禁止されました！",
+    "menubar_status_strikes": "\\ {1 \\} / 3のストライキがあります！",
+    "menubar_status_ok": "ここには何も表示されません😁",
+
+    "menubar_account_login": "ログインする",
+    "menubar_account_upgrade": "アカウントをアップグレードする",
+    "menubar_account_logout": "サインアウト",
+
+    "chat_title": "チャットルーム",
+    "chat_button_send": "送信",
+    "chat_input_placeholder_user": "\\ {1 \\} ..としてチャット",
+    "chat_input_placeholder_default": "匿名でチャットしています...",
+    "chat_error_account": "最初にサインインする必要があります！",
+
+    "chat_message_default_user": "（匿名）",
+    "chat_message_banned_text": "あなたは初心者を禁止されました！",
+    "chat_message_banned_user": "管理者"
+}

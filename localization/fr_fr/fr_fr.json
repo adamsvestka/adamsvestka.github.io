@@ -1,0 +1,31 @@
+{
+    "page1": "Page 1",
+    
+    "page2": "Page 2",
+
+    "sidebar_default": "Article",
+    "sidebar_chat": "bavarder",
+
+    "menubar_accessibility_theme": "Mode foncé",
+    "menubar_accessibility_motion": "Mouvement réduit",
+    "menubar_accessibility_language": "Langue",
+    "menubar_accessibility_back": "Précédent",
+
+    "menubar_status_banned": "Vous avez été banni!",
+    "menubar_status_strikes": "Vous avez {1}/3 frappes!",
+    "menubar_status_ok": "Rien à voir ici 😁",
+
+    "menubar_account_login": "Connectez-vous",
+    "menubar_account_upgrade": "Compte de mise à niveau",
+    "menubar_account_logout": "Dédez-vous",
+
+    "chat_title": "Chatroom",
+    "chat_button_send": "Envoyer",
+    "chat_input_placeholder_user": "Chat comme {1}...",
+    "chat_input_placeholder_default": "Bavarder anonymement...",
+    "chat_error_account": "Vous devez vous connecter en premier!",
+
+    "chat_message_default_user": "(anonyme)",
+    "chat_message_banned_text": "Vous avez été interdit noob!",
+    "chat_message_banned_user": "Admin"
+}
