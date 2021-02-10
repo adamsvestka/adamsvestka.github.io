@@ -3,7 +3,9 @@
     "all": [
         "",
         "cs-CZ",
-        "de-DE",
-        "en-US"
+        "en-US",
+        "en-US-en-fr_fr-C",
+        "fr_fr",
+        "localization"
     ]
 }
