@@ -1,0 +1,31 @@
+{
+    "page1": "cfinuwxiawrgfaergaerg 1",
+
+    "page2": "Page 2",
+
+    "sidebar_default": "Item",
+    "sidebar_chat": "Chat",
+
+    "menubar_accessibility_theme": "Dark Mode",
+    "menubar_accessibility_motion": "Reduced Motion",
+    "menubar_accessibility_language": "Language",
+    "menubar_accessibility_back": "Back",
+
+    "menubar_status_banned": "You have been banned!",
+    "menubar_status_strikes": "You have {1}/3 strikes!",
+    "menubar_status_ok": "Nothing to see here 😁",
+
+    "menubar_account_login": "Log In",
+    "menubar_account_upgrade": "Upgrade account",
+    "menubar_account_logout": "Sign out",
+
+    "chat_title": "Chatroom",
+    "chat_button_send": "Send",
+    "chat_input_placeholder_user": "Chatting as {1}...",
+    "chat_input_placeholder_default": "Chatting anonymously...",
+    "chat_error_account": "You must sign in first!",
+
+    "chat_message_default_user": "(anonymous)",
+    "chat_message_banned_text": "You have been banned noob!",
+    "chat_message_banned_user": "Admin"
+}
