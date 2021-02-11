@@ -1,31 +1,31 @@
 {
-    "page1": "cfinuwxiawrgfaergaerg 1",
+    "page1": "ページ1",
 
-    "page2": "Page 2",
+    "page2": "2ページ",
 
-    "sidebar_default": "Item",
-    "sidebar_chat": "Chat",
+    "sidebar_default": "項目",
+    "sidebar_chat": "チャット",
 
-    "menubar_accessibility_theme": "Dark Mode",
-    "menubar_accessibility_motion": "Reduced Motion",
-    "menubar_accessibility_language": "Language",
-    "menubar_accessibility_back": "Back",
+    "menubar_accessibility_theme": "ダークモード",
+    "menubar_accessibility_motion": "動きの減少",
+    "menubar_accessibility_language": "言語",
+    "menubar_accessibility_back": "バック",
 
-    "menubar_status_banned": "You have been banned!",
-    "menubar_status_strikes": "You have {1}/3 strikes!",
-    "menubar_status_ok": "Nothing to see here 😁",
+    "menubar_status_banned": "あなたは禁止されました！",
+    "menubar_status_strikes": "\\ {1 \\} / 3のストライキがあります！",
+    "menubar_status_ok": "ここには何も表示されません😁",
 
-    "menubar_account_login": "Log In",
-    "menubar_account_upgrade": "Upgrade account",
-    "menubar_account_logout": "Sign out",
+    "menubar_account_login": "ログインする",
+    "menubar_account_upgrade": "アカウントをアップグレードする",
+    "menubar_account_logout": "サインアウト",
 
-    "chat_title": "Chatroom",
-    "chat_button_send": "Send",
-    "chat_input_placeholder_user": "Chatting as {1}...",
-    "chat_input_placeholder_default": "Chatting anonymously...",
-    "chat_error_account": "You must sign in first!",
+    "chat_title": "チャットルーム",
+    "chat_button_send": "送信",
+    "chat_input_placeholder_user": "\\ {1 \\} ..としてチャット",
+    "chat_input_placeholder_default": "匿名でチャットしています...",
+    "chat_error_account": "最初にサインインする必要があります！",
 
-    "chat_message_default_user": "(anonymous)",
-    "chat_message_banned_text": "You have been banned noob!",
-    "chat_message_banned_user": "Admin"
+    "chat_message_default_user": "（匿名）",
+    "chat_message_banned_text": "あなたは初心者を禁止されました！",
+    "chat_message_banned_user": "管理者"
 }
