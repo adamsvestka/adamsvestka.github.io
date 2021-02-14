@@ -6,7 +6,10 @@
     "sidebar_default": "Položka",
     "sidebar_chat": "Povídat si",
 
-
+    "menubar_accessibility_theme": "Temný režim",
+    "menubar_accessibility_motion": "Snížený pohyb",
+    "menubar_accessibility_language": "Jazyk",
+    "menubar_accessibility_back": "Zadní",
 
     "menubar_status_banned": "Byl jsi zablokován!",
     "menubar_status_strikes": "Máte {1}/3 stávky!",
