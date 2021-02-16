@@ -1,6 +1,7 @@
 {
     "default": "en-US",
     "all": [
+        "cs-CZ",
         "en-US"
     ]
 }
