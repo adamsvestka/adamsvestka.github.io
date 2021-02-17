@@ -24,7 +24,7 @@
     "chat_input_placeholder_default": "Chatování anonymně...",
     "chat_error_account": "Nejdřív se musíš přihlásit!",
 
-    "chat_message_default_user": "Anonymní",
+    "chat_message_default_user": "(anonymní)",
     "chat_message_banned_text": "Byl jsi zakázán noob!",
     "chat_message_banned_user": "Admin"
 }
