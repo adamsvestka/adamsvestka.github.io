@@ -1,9 +1,7 @@
 {
     "page1": "Page 1",
-<<<<<<< HEAD
-=======
+
     "page2": "Page 2",
->>>>>>> cca71eb004c140c72ccf2051a6783350c7d0b207
 
     "sidebar_default": "Item",
     "sidebar_chat": "Chat",
