@@ -1,9 +1,8 @@
 {
-    "page1": "Strana 1",
-    "page2": "Stránka 2",
+    "page1": "Stránka 1",
 
     "sidebar_default": "Položka",
-    "sidebar_chat": "Povídat si",
+    "sidebar_chat": "Chat",
     "sidebar_tiles": "Dlaždice",
 
     "menubar_accessibility_theme": "Temný režim",
