@@ -2,6 +2,7 @@
     "default": "en-US",
     "all": [
         "cs-CZ",
-        "en-US"
+        "en-US",
+        "fr-FR"
     ]
 }
