@@ -10,7 +10,11 @@
                         const response = await fetch(url, { method, headers, body, mode: 'cors', credentials: 'omit' });
                         for (const key of ['ok', 'status', 'statusText']) result[key] = response[key];
                         result.headers = Object.fromEntries(response.headers);
-                        result.json = response.status != 204 ? await response.json() : null;
+                        try {
+                            result.json = response.status != 204 ? await response.json() : null;
+                        } catch {
+                            result.json = await response.text();
+                        }
                     } catch (error) {
                         result.ok = false;
                         result.error = error.message;
